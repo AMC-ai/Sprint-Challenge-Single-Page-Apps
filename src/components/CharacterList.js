@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from './CharacterCard';
-import { Link } from 'react-router-dom';
 
-export default function CharacterList() {
+
+export default function CharacterList(props) {
   const [character, setCharacter] = useState([]);
 
   useEffect(() => {
@@ -12,6 +12,7 @@ export default function CharacterList() {
       .then((response) => {
         // console.log(response);
         setCharacter(response.data.results);
+        props.setCharacters(response.data.results);
 
       })
       .catch(error => {
@@ -21,7 +22,7 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      {character.map((person) => (
+      {props.filteredCharacters.map((person) => (
         <CharacterCard char={person} key={person.id} />
       ))}
     </section>

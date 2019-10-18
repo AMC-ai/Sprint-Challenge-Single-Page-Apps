@@ -3,7 +3,7 @@ import {
   Card, CardImg, CardBody,
   CardTitle, CardSubtitle
 } from 'reactstrap';
-import styled from "styled-components";
+// import styled from "styled-components";
 
 export default function CharacterCard(props) {
   return (
