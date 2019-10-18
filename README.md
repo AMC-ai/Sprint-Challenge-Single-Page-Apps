@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Because less data is used to process routes between views and is generally faster and won't trigger http call.
 
 ## Project Set Up
 

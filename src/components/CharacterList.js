@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from './CharacterCard';
+import { Link } from 'react-router-dom';
 
 export default function CharacterList() {
   const [character, setCharacter] = useState([]);
@@ -9,7 +10,7 @@ export default function CharacterList() {
     axios
       .get(`https://rickandmortyapi.com/api/character/`)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         setCharacter(response.data.results);
 
       })
@@ -20,9 +21,9 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      {character.map((person) =>
-        <CharacterCard char={person} key={person.id} />)
-      }
+      {character.map((person) => (
+        <CharacterCard char={person} key={person.id} />
+      ))}
     </section>
   );
 }
